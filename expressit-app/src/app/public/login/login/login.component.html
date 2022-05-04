@@ -1,1 +1,41 @@
-<p>login works!</p>
+
+<mat-grid-list cols="4" >
+  <mat-grid-tile [colspan]="2" [rowspan]="2">
+    <img src="/../../assets/login.png" height="80%"/>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+<div class="container">
+  <h4 class="text-center"> Inicio de Sesión</h4>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+    <div class="example-container">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Usuario" formControlName="email">
+          <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+            Ingresa un usuario válido
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+            El usuario es requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+            La contraseña debe ser mayor a 8 caracteres y debe contener una o más mayusculas , minúsculas , números y caracteres especiales
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top">
+        <button [disabled]="!loginForm.valid" mat-raised-button mat-button>Iniciar Sesión</button>
+      </div>
+    </div>
+  </form>
+</div>
+  </mat-grid-tile>
+</mat-grid-list>

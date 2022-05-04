@@ -12,7 +12,8 @@ export class PublicNavbarComponent implements OnInit {
   menuItems: MenuItem[] = [
     {
       label: 'Escribir',
-      icon: 'login'
+      icon: 'login',
+
     },
     {
       label: 'Nuestra Historia',

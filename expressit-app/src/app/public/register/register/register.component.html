@@ -1,0 +1,68 @@
+<div class="container-left">
+  <img src="/../../assets/register.png" width="100%"/>
+</div>
+<div class="container-right">
+  <h4 class="text-center"> Registro</h4>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+    <div class="example-container">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Correo" formControlName="email">
+          <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+          Ingresa un correo válido
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+            El correo es requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Contraseña" formControlName="password">
+          <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+            La contraseña debe ser mayor a 8 caracteres y debe contener una o más mayusculas , minúsculas , números y caracteres especiales
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="name">
+          <mat-error *ngIf="!loginForm.get('name')?.errors?.required">
+            El nombre debe estar compuesto por literales
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('name')?.invalid && (loginForm.get('name')?.dirty || loginForm.get('name')?.touched) && loginForm.get('name')?.errors?.required">
+            El nombre es requerido
+          </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+        <input matInput placeholder="Apellido" formControlName="lastname">
+          <mat-error *ngIf="!loginForm.get('lastname')?.errors?.required">
+            El apellido debe estar compuesto por literales
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('lastname')?.invalid && (loginForm.get('lastname')?.dirty || loginForm.get('lastname')?.touched) && loginForm.get('lastname')?.errors?.required">
+            El apellido es requerido
+          </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+        <input matInput placeholder="Edad" formControlName="age">
+          <mat-error *ngIf="!loginForm.get('age')?.errors?.required">
+            La edad debe estar compuesto numeros
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('age')?.invalid && (loginForm.get('age')?.dirty || loginForm.get('age')?.touched) && loginForm.get('age')?.errors?.required">
+            La edad es requerida
+          </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="mt-top">
+        <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Registrarse</button>
+      </div>
+    </div>
+  </form>
+</div>

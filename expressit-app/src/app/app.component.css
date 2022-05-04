@@ -1,0 +1,18 @@
+.texto{
+position: absolute;
+width: 269px;
+height: 344px;
+left: 127px;
+top: 130px;
+
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 65px;
+
+color: #000000;
+
+text-shadow: 0px 4px 0px rgba(115, 111, 111, 0.15);
+
+}

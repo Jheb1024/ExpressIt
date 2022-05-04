@@ -1,10 +1,25 @@
 <mat-toolbar fxLayout="row" color="white">
   <a class="nav-link" routerLink="/"><img src="/assets/Logo.png" height="60px" width="auto"/>
   </a><span fxFlex>Express It</span>
-  <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+  <button mat-button fxHide.xs value="Escribir">
       <!--<mat-icon class="mr">{{item.icon}}</mat-icon>-->
-      {{item.label}}
+      <!--{{item.label}}-->
+      <a class="nav-link" style="text-decoration: none;" routerLink="/">Escribir</a>
   </button>
+  <button mat-button  fxHide.xs>
+    <!--<mat-icon class="mr">{{item.icon}}</mat-icon>-->
+    <a class="nav-link" style="text-decoration: none;" routerLink="/inicio-sesion">Inicio Sesión</a>
+</button>
+<button mat-button fxHide.xs>
+  <!--<mat-icon class="mr">{{item.icon}}</mat-icon>-->
+  <a class="nav-link" style="text-decoration: none;" routerLink="/">Nuestra Historia</a>
+</button>
+<button mat-button fxHide.xs>
+  <!--<mat-icon class="mr">{{item.icon}}</mat-icon>-->
+  <a class="nav-link" style="text-decoration: none;" routerLink="/registro">Registrarse</a>
+</button>
+
+
   <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
       <mat-icon>more_vert</mat-icon>
   </button>
@@ -17,5 +32,5 @@
           </button>
           <mat-divider></mat-divider>
       </ng-container>
-  </mat-menu><a class="nav-link" routerLink="/inicio-sesion">Inicio</a>
+  </mat-menu>
 </mat-toolbar>
